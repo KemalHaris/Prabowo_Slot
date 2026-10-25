@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epic Slot Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game" id="game">
+
+    <!-- counts -->
+    <aside class="win-count" aria-label="Win count">
+      <h2>WIN COUNT</h2>
+      <div class="win-count-body">
+        <div class="counts">
+          <label>SHIT WIN: <output id="shitCount">0</output></label>
+          <label>MID WIN: <output id="midCount">0</output></label>
+          <label>EPIC WIN: <output id="epicCount">0</output></label>
+        </div>
+        <div class="score-wrap">
+          <span>SCORE</span>
+          <output id="score">0</output>
+        </div>
+      </div>
+    </aside>
+
+    <h1 class="title">PRABOWO SLOT</h1>
+
+    <main class="stage">
+      <!-- Put your gif paths in these two <img> tags (src="") -->
+      <div class="gif-panel" id="gifLeft"><img id="gifLeftImg" src="" alt=""></div>
+
+      <div class="reel-box">
+        <div class="reels" id="reels" aria-live="polite"></div>
+      </div>
+
+      <div class="gif-panel" id="gifRight"><img id="gifRightImg" src="" alt=""></div>
+    </main>
+
+    <button class="btn spin-btn" id="spinBtn">SPIN</button>
+    <button class="btn list-btn" id="iconListBtn">ICON LIST</button>
+  </div>
+
+  <!-- icon list -->
+  <div class="modal" id="iconModal" hidden role="dialog" aria-modal="true" aria-label="Icon list">
+    <div class="modal-card">
+      <button class="btn close-btn" id="closeBtn">close tab</button>
+      <h2>STANDARD ICONS</h2>
+      <div class="icon-grid" id="standardIcons"></div>
+      <p class="pay-note">3 in a row = 3 pts &nbsp;|&nbsp; 4 in a row = 6 pts &nbsp;|&nbsp; 5 in a row = 9 pts</p>
+      <div class="special-row">
+        <div class="special">
+          <h3>SCATTER ICON</h3>
+          <div class="cell big" id="scatterIcon"></div>
+          <p>3+ anywhere = +2 pts</p>
+        </div>
+        <div class="special">
+          <h3>WILD ICON</h3>
+          <div class="cell big" id="wildIcon"></div>
+          <p>Substitutes any standard icon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- winnign -->
+  <div class="win-popup" id="winPopup" hidden></div>
+
+  <!-- Rain + firework layer -->
+  <div class="fx" id="fx" aria-hidden="true"></div>
+
+  <!-- lock -->
+  <div class="lock" id="lockOverlay" hidden role="alertdialog" aria-modal="true" aria-labelledby="lockMsg">
+    <div class="lock-card">
+      <p class="lock-msg" id="lockMsg"></p>
+      <p class="lock-sub">bisa main lagi dalam:</p>
+      <output class="lock-timer" id="lockTimer">00:00</output>
+      <div class="lock-pic"><img id="lockImg" src="" alt=""></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
